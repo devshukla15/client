@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, useHistory, useLocation } from "react-router-dom"
-import {
-  AppBar,
-  Avatar,
-  Button,
-  Toolbar,
-  Typography,
-} from "@material-ui/core"
+import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core"
 import useStyles from "./styless"
 import { useDispatch } from "react-redux"
 import decode from "jwt-decode"
@@ -14,7 +8,7 @@ import memoriestext from "../../images/memories3.png"
 import TemporaryDrawer from "./Menubar/Menubar"
 import { Switch } from "@material-ui/core"
 
-const Navbar = ({darkMode, setDarkMode}) => {
+const Navbar = ({ darkMode, setDarkMode }) => {
   const classes = useStyles()
   const dispatch = useDispatch()
   const history = useHistory()
@@ -49,7 +43,8 @@ const Navbar = ({darkMode, setDarkMode}) => {
 
     window.addEventListener("resize", updateSize)
     return () => window.removeEventListener("resize", updateSize)
-  }, [location])
+    // eslint-disable-next-line
+  }, [location, user?.token])
 
   return (
     <AppBar position="static" color="inherit" className={classes.appBar}>
@@ -63,7 +58,11 @@ const Navbar = ({darkMode, setDarkMode}) => {
         />
       </Link>
 
-      <Switch  checked={darkMode} onClick={() => setDarkMode(!darkMode)} label="Theme" />
+      <Switch
+        checked={darkMode}
+        onClick={() => setDarkMode(!darkMode)}
+        label="Theme"
+      />
 
       {isDesktop ? (
         <React.Fragment>

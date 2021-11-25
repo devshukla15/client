@@ -11,6 +11,7 @@ const Home = () => {
   const [currentId, setCurrentId] = useState(0)
   const dispatch = useDispatch()
   const classes = useStyles()
+  // eslint-disable-next-line
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
 
   useEffect(() => {

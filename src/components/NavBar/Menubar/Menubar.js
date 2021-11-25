@@ -13,7 +13,7 @@ import Form from "../../Form/Form"
 import { Link } from "react-router-dom"
 import MenuIcon from "@material-ui/icons/Menu"
 import useStyles from "./styles"
-import { Switch } from "@material-ui/core"
+//import { Switch } from "@material-ui/core"
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({

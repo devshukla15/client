@@ -29,8 +29,6 @@ const Auth = () => {
   const dispatch = useDispatch()
   const history = useHistory()
 
-   
-
   const [isSignup, setIsSignup] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState(initialState)
@@ -48,18 +46,16 @@ const Auth = () => {
   }
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    
   }
 
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  })
+  // const [user, setUser] = useState({
+  //   email: "",
+  //   password: "",
+  // })
 
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup)
     setShowPassword(false)
-   
   }
 
   const googleSuccess = async (res) => {
@@ -162,7 +158,7 @@ const Auth = () => {
           />
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Button onClick={switchMode} >
+              <Button onClick={switchMode}>
                 {isSignup
                   ? "Already have an account? Sign In"
                   : "Don't have an account? SIgn Up"}
